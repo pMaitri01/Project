@@ -1,0 +1,97 @@
+import React, { useState } from "react";
+import "./Registration.css";
+import registerImage from "../images/register.jpeg";
+
+export default function Register() {
+  const [formData, setFormData] = useState({
+    fname: "",
+    lname: "",
+    gender: "",
+    dob: "",
+    mobile: "",
+    email: "",
+    address: "",
+    password: "",
+    confirmPassword: ""
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    console.log(formData);
+  };
+
+  return (
+    <div className="register-container">
+
+      <div className="register-card">
+
+        {/* LEFT IMAGE */}
+        <div className="left-section">
+          <img src={registerImage} alt="register" />
+        </div>
+
+        {/* RIGHT FORM BOX */}
+        <div className="right-section">
+
+          <div className="form-box">
+            <h2>Patient Registration</h2>
+
+            <form onSubmit={handleSubmit}>
+
+  {/* BASIC INFO */}
+  <h3 className="section-title">Basic Information</h3>
+
+  <div className="row">
+    <input type="text" name="fname" placeholder="First Name" onChange={handleChange} required />
+    <input type="text" name="lname" placeholder="Last Name" onChange={handleChange} required />
+  </div>
+
+  <div className="row">
+    <select name="gender" onChange={handleChange} required>
+      <option value="">Gender</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+
+    <input type="date" name="dob" onChange={handleChange} required />
+  </div>
+
+  {/* CONTACT DETAILS */}
+  <h3 className="section-title">Contact Details</h3>
+
+  <div className="row">
+    <input type="text" name="mobile" placeholder="Mobile Number" onChange={handleChange} required />
+    <input type="email" name="email" placeholder="Email Address" onChange={handleChange} required />
+  </div>
+
+  <textarea name="address" placeholder="Full Address" onChange={handleChange} required />
+
+  {/* LOGIN CREDENTIALS */}
+  <h3 className="section-title">Login Credentials</h3>
+
+  <div className="row">
+    <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
+    <input type="password" name="confirmPassword" placeholder="Confirm Password" onChange={handleChange} required />
+  </div>
+
+  <button type="submit">Register</button>
+
+</form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  );
+}
