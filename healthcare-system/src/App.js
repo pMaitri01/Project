@@ -5,6 +5,7 @@ import ForgotPassword from "./patient/pages/ForgotPassword";
 import Otp from './patient/pages/Otp';
 import ResetPwd from './patient/pages/ResetPwd';
 import Registration from './patient/pages/Registration';
+import AdminLogin from './admin/pages/AdminLogin';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path='/Otp' element={<Otp/>} />
         <Route path='/ResetPwd' element={<ResetPwd/>} />
         <Route path='/Registration' element={<Registration/>}/>
+        <Route path='/AdminLogin' element={<AdminLogin/>}/>
       </Routes>
     </BrowserRouter>
   );

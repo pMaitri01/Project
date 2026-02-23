@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./AdminLogin.css";
+import { Link } from "react-router-dom";
+import "../css/AdminLogin.css";
 
 export default function AdminLogin() {
   const [formData, setFormData] = useState({
@@ -18,12 +19,12 @@ export default function AdminLogin() {
 
   return (
     <div className="doctor-login-container">
-      <div className="login-card">
-        <h2>Doctor Login</h2>
+      <div className="admin-login-card">
+        <h2>Doctor's Login</h2>
 
         <form onSubmit={handleSubmit}>
-          <div className="input-group">
-            <label>Email</label>
+          <div className="admin-input-group">
+            {/* <label>Email</label> */}
             <input
               type="email"
               name="email"
@@ -34,8 +35,8 @@ export default function AdminLogin() {
             />
           </div>
 
-          <div className="input-group">
-            <label>Password</label>
+          <div className="admin-input-group">
+            {/* <label>Password</label> */}
             <input
               type="password"
               name="password"
@@ -45,12 +46,25 @@ export default function AdminLogin() {
               required
             />
           </div>
+           {/* <p className="admin-forgot">Forgot Password?</p> */}
+          <small className="admin-text-primary">
+                  <Link to="./demo" className="admin-text-primary">
+                      Forgot Password?
+                  </Link>
 
-          <button type="submit" className="login-btn">
+          </small>
+          <button type="submit" className="admin-login-btn">
             Login
           </button>
 
-          <p className="forgot">Forgot Password?</p>
+           <small className="admin-txtregister">
+              Don’t have account? 
+               {/* <span className="text-primary"> Register</span>  */}
+              <Link to="./demo" className="admin-text-primary">
+                Register
+              </Link>
+            </small>
+
         </form>
       </div>
     </div>

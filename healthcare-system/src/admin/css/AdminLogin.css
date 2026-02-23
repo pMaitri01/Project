@@ -1,72 +1,77 @@
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
+  font-size: 50px;
 }
 
 /* Background */
 .doctor-login-container {
   height: 100vh;
-  background: linear-gradient(135deg, #504DA6, #2E2A72);
+  background:#5e78e9;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 /* Card */
-.login-card {
+.admin-login-card {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   padding: 40px;
   border-radius: 16px;
-  width: 350px;
+  width: 400px;
   color: #fff;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 /* Title */
-.login-card h2 {
+.admin-login-card h2 {
   text-align: center;
   margin-bottom: 25px;
 }
 
 /* Inputs */
-.input-group {
+.admin-input-group {
   margin-bottom: 20px;
 }
 
-.input-group label {
+.admin-input-group label {
   font-size: 14px;
   display: block;
   margin-bottom: 5px;
 }
-
-.input-group input {
+.admin-text-primary{
+  color: white;
+  text-decoration: none;
+}
+.admin-input-group input {
   width: 100%;
   padding: 10px;
   border: none;
   border-radius: 8px;
   outline: none;
 }
-
 /* Button */
-.login-btn {
+.admin-login-btn {
   width: 100%;
   padding: 12px;
-  background: #7A77D9;
+  background:#EDE4C2;
   border: none;
   border-radius: 8px;
-  color: #fff;
+  color: #6B7445;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  margin-bottom:5px !important;
 }
 
-.login-btn:hover {
-  background: #5f5cd3;
+.admin-login-btn:hover {
+  background: #547792; 
+  color: black;
 }
 
 /* Forgot */
-.forgot {
+.admin-forgot {
   text-align: right;
   font-size: 13px;
   margin-top: 10px;
