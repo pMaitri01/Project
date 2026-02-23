@@ -118,24 +118,28 @@ input{
 .password-field input {
   padding-right: 45px;
 }
-
 .toggle-eye {
   position: absolute;
-  right: 12px;
+  right: 50px;
   top: 35%;
   transform: translateY(-50%);
   cursor: pointer;
   font-size: 18px;
   color: #666;
   transition: 0.3s;
+} 
+.text-primary{
+  text-decoration: none;
 }
-
 .toggle-eye:hover {
   color: #0aa5a5;
 }
 .ckb{
   width: 20px;
   margin-top: 0px !important;
+}
+.password-field .form-control.is-invalid {
+  background-position: right 27px center;
 }
 .btn{
   margin-top: -20px !important;

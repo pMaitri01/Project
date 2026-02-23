@@ -137,10 +137,6 @@ export default function Login() {
               </div>
             )}
 
-            {errors.password && (
-              <div className="invalid-feedback">{errors.password}</div>
-            )}
-
             <div className="d-flex justify-content-between mb-3">
               <small>
                 <input type="checkbox" className="ckb"/> Remember me
