@@ -159,7 +159,10 @@ export default function Login() {
 
             <small className="txtreg">
               Don’t have account?
-              <span className="text-primary"> Register</span>
+              {/* <span className="text-primary"> Register</span> */}
+              <Link to="/Registration" className="text-primary">
+                Register
+              </Link>
             </small>
           </form>
         </div>
