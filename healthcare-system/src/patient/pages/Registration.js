@@ -45,7 +45,7 @@ export default function Register() {
 
     if (response.ok) {
       // alert("Patient Registered Successfully");
-      navigate("./Login.js"); // 👈 redirect to login page
+      navigate("/"); // 👈 redirect to login page
 
     } else {
       alert(data.error || "Registration Failed");
