@@ -1,4 +1,5 @@
  import React, { useState } from "react";
+ import { useNavigate } from "react-router-dom";
 import "./Registration.css";
 import registerImage from "../images/register.jpeg";
 
@@ -18,6 +19,7 @@ export default function Register() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+     const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
   e.preventDefault();
@@ -42,7 +44,9 @@ export default function Register() {
     console.log(data);
 
     if (response.ok) {
-      alert("Patient Registered Successfully");
+      // alert("Patient Registered Successfully");
+      navigate("./Login.js"); // 👈 redirect to login page
+
     } else {
       alert(data.error || "Registration Failed");
     }
