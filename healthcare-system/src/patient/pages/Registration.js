@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+ import React, { useState } from "react";
 import "./Registration.css";
 import registerImage from "../images/register.jpeg";
 

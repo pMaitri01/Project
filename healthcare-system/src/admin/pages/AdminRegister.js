@@ -64,17 +64,25 @@ export default function DoctorRegister() {
         <form onSubmit={handleSubmit}>
           {/* Basic Info */}
           <p className="admin-section-title">Basic Information</p>
+          <input type="text" name="fullName" placeholder="Full Name" onChange={handleChange} />
+
           <div className="admin-row">
-            <input type="text" name="fullName" placeholder="Full Name" onChange={handleChange} />
-            <select name="gender" onChange={handleChange}>
+            <select name="gender" onChange={handleChange} className="gen">
               <option value="">Gender</option>
               <option>Male</option>
               <option>Female</option>
               <option>Other</option>
             </select>
+            <input type="date" name="dob" onChange={handleChange} />
+
           </div>
 
-          <input type="date" name="dob" onChange={handleChange} />
+          {/* Professional */}
+           <p className="admin-section-title">Professional Details</p>
+          <div className="admin-row">
+            <input type="text" name="specialization" placeholder="Specialization" onChange={handleChange} />
+            <input type="text" name="qualification" placeholder="Qualification" onChange={handleChange} />
+          </div>
 
           {/* Contact */}
           <p className="admin-section-title">Contact Details</p>
@@ -83,7 +91,7 @@ export default function DoctorRegister() {
             <input type="email" name="email" placeholder="Email Address" onChange={handleChange} />
           </div>
 
-          <textarea name="address" placeholder="Full Address" onChange={handleChange}></textarea>
+          <textarea name="address" placeholder="Full Address" onChange={handleChange} class></textarea>
 
           {/* Login */}
           <p className="admin-section-title">Login Credentials</p>
@@ -92,13 +100,6 @@ export default function DoctorRegister() {
           <div className="admin-row">
             <input type="password" name="password" placeholder="Password" onChange={handleChange} />
             <input type="password" name="confirmPassword" placeholder="Confirm Password" onChange={handleChange} />
-          </div>
-
-          {/* Professional */}
-          <p className="admin-section-title">Professional Details</p>
-          <div className="admin-row">
-            <input type="text" name="specialization" placeholder="Specialization" onChange={handleChange} />
-            <input type="text" name="qualification" placeholder="Qualification" onChange={handleChange} />
           </div>
 
           <button type="submit" className="admin-register-btn">
