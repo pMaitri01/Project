@@ -19,16 +19,39 @@ export default function Register() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match");
-      return;
+  if (formData.password !== formData.confirmPassword) {
+    alert("Passwords do not match");
+    return;
+  }
+
+  try {
+    const { confirmPassword, ...dataToSend } = formData;
+
+    const response = await fetch("http://localhost:5000/api/patient/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(dataToSend)
+    });
+
+    const data = await response.json();
+    console.log(data);
+
+    if (response.ok) {
+      alert("Patient Registered Successfully");
+    } else {
+      alert(data.error || "Registration Failed");
     }
 
-    console.log(formData);
-  };
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Server Error");
+  }
+};
 
   return (
     <div className="register-container">
