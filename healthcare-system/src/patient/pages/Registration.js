@@ -1,5 +1,7 @@
  import React, { useState } from "react";
  import { useNavigate } from "react-router-dom";
+ import { Link } from "react-router-dom";
+
 import "./Registration.css";
 import registerImage from "../images/register.jpeg";
 
@@ -45,7 +47,7 @@ export default function Register() {
 
     if (response.ok) {
       // alert("Patient Registered Successfully");
-      navigate("./Login.js"); // 👈 redirect to login page
+      navigate("/"); // 👈 redirect to login page
 
     } else {
       alert(data.error || "Registration Failed");
@@ -113,6 +115,14 @@ export default function Register() {
   </div>
 
   <button type="submit">Register</button>
+<div className="log">
+  <small className="txtlog">
+    Already have account?
+    <Link to="/" className="text-primary">
+      Login
+    </Link>
+  </small>
+</div>
 
 </form>
           </div>
