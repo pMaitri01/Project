@@ -60,23 +60,48 @@ export default function Login() {
   };
 
   // Handle Submit (Full Form Validation)
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const newErrors = {};
+  const newErrors = {};
 
-    const emailError = validateField("email", formData.email);
-    if (emailError) newErrors.email = emailError;
+  const emailError = validateField("email", formData.email);
+  if (emailError) newErrors.email = emailError;
 
-    const passwordError = validateField("password", formData.password);
-    if (passwordError) newErrors.password = passwordError;
+  const passwordError = validateField("password", formData.password);
+  if (passwordError) newErrors.password = passwordError;
 
-    setErrors(newErrors);
+  setErrors(newErrors);
 
-    if (Object.keys(newErrors).length === 0) {
-      alert("Login Successful ✅");
+  if (Object.keys(newErrors).length === 0) {
+    try {
+      const response = await fetch(
+        "http://localhost:5000/api/patient/login",  
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: formData.email,
+            password: formData.password,
+          }),
+        }
+      );
+
+      // const data = await response.json();
+
+      if (response.ok) {
+        alert("Login Successful");
+        // console.log(data);
+      }
+
+    } catch (error) {
+      console.error(error);
+      alert("Server Error");
     }
-  };
+  }
+};
 
   return (
     <div className="login-container">
