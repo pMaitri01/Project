@@ -96,7 +96,7 @@ export default function Login() {
 
       if (response.ok) {
         alert("Login Successful");
-        Navigate("/PatientHome");
+        navigate("/PatientHome");
       }
       else{
         alert(data.message);
