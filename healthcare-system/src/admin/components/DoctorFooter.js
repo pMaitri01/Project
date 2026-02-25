@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function PatientFooter() {
+export default function DoctorFooter() {
   const styles = {
     footer: {
       marginLeft: "250px",

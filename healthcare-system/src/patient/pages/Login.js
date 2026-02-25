@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+ import { Navigate, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "./Login.css";
 import patientImage from "../images/patient-1.jpg";
@@ -12,6 +13,7 @@ export default function Login() {
 
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
 
   // Handle Input Change
@@ -74,7 +76,7 @@ export default function Login() {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      alert("Login Successful ✅");
+      // alert("Login Successful ✅");
     }
   };
 

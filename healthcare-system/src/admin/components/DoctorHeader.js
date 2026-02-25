@@ -3,7 +3,7 @@ import { FaBell, FaSearch, FaChevronDown } from "react-icons/fa";
 import userImg from "../images/user.png"; // ✅ correct import
 
 
-export default function PatientHeader() {
+export default function DoctorHeader() {
   const [open, setOpen] = useState(false);
   const [focused, setFocused] = useState(false);
 
@@ -100,7 +100,7 @@ export default function PatientHeader() {
           Hi, Maitri 👋 Welcome to Medi-Track
         </span>
 
-        <div style={styles.searchWrapper}>
+        {/* <div style={styles.searchWrapper}>
           <FaSearch style={styles.icon} />
           <input
             type="text"
@@ -109,7 +109,7 @@ export default function PatientHeader() {
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
           />
-        </div>
+        </div> */}
       </div>
 
       {/* RIGHT */}

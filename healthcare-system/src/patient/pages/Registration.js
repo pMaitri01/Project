@@ -93,7 +93,17 @@ export default function Register() {
       <option>Other</option>
     </select>
 
-    <input type="date" name="dob" onChange={handleChange} required />
+    <input
+      type="text"
+      name="dob"
+      placeholder="Date of Birth"
+      onFocus={(e) => (e.target.type = "date")}
+      onBlur={(e) => {
+        if (!e.target.value) e.target.type = "text";
+      }}
+      onChange={handleChange}
+      required
+    />
   </div>
 
   {/* CONTACT DETAILS */}
