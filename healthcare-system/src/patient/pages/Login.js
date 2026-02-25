@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "./Login.css";
 import patientImage from "../images/patient-1.jpg";
@@ -58,7 +59,9 @@ export default function Login() {
       [name]: error
     }));
   };
-
+  
+  const navigate = useNavigate();
+  
   // Handle Submit (Full Form Validation)
   const handleSubmit = async (e) => {
   e.preventDefault();
@@ -93,6 +96,7 @@ export default function Login() {
 
       if (response.ok) {
         alert("Login Successful");
+        Navigate("/PatientHome");
       }
       else{
         alert(data.message);
