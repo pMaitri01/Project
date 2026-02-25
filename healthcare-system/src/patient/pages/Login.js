@@ -89,20 +89,21 @@ export default function Login() {
         }
       );
 
-      // const data = await response.json();
+      const data = await response.json();
 
       if (response.ok) {
         alert("Login Successful");
-        // console.log(data);
+      }
+      else{
+        alert(data.message);
       }
 
     } catch (error) {
       console.error(error);
       alert("Server Error");
     }
-  }
+  } 
 };
-
   return (
     <div className="login-container">
       <div className="main-heading">
